@@ -22,6 +22,7 @@ app.use((req, res, next) => {
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
 app.use(require('./app/router'));
 
 var port = process.env.port || 8001
