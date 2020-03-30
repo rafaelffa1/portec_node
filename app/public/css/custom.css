@@ -1,1 +1,5 @@
 /* Add here all your CSS customizations */
+
+.rev-slidebg {
+  filter: brightness(0.7) !important
+}
