@@ -22,3 +22,5 @@ var port = process.env.port || 21170
 // io.listen(port2);
 server.listen(port);
 console.log("Iniciando a app na porta " + port);
+
+
