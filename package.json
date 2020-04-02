@@ -1,14 +1,12 @@
 {
   "name": "node-api-crud",
   "version": "1.0.0",
-  "description": "Código desenvolvido durante a gravação das videos aulas sobre: CRUD com Node.Js + MongoDb + Express.js, através do meu canal do Youtube: [AQUI](https://www.youtube.com/user/l32759)",
   "main": "server.js",
   "scripts": {
     "dev": "nodemon ./server.js"
   },
   "repository": {
-    "type": "git",
-    "url": "https://github.com/glaucia86/video-nodejs-mongo-restful-crud"
+    "type": "git"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -27,10 +25,6 @@
   },
   "author": "Rafael Almeida",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/glaucia86/video-nodejs-mongo-restful-crud/issues"
-  },
-  "homepage": "https://github.com/glaucia86/video-nodejs-mongo-restful-crud#readme",
   "devDependencies": {
     "nodemon": "^1.18.10"
   }

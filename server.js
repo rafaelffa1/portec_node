@@ -1,11 +1,12 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
 const cors = require('cors');
-var io = require('./app/connectionSocket');
+// var mongoose = require('mongoose');
+// var io = require('./app/connectionSocket');
 
 const app = express();
 const server = require('http').Server(app);
+
 app.use((req, res, next) => {
   return next();
 });
@@ -13,7 +14,6 @@ app.use((req, res, next) => {
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
 app.use(require('./app/router'));
 
 var port = process.env.port || 21170

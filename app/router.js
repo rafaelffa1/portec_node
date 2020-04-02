@@ -4,7 +4,7 @@ const path = require("path");
 const ProdutoController = require('./controller/ProdutoController');
 const UsuarioController = require('./controller/UsuarioController');
 const bcrypt = require('bcryptjs');
-const session = require('express-session');
+// const session = require('express-session');
 const app = express();
 
 router.use('/', express.static(path.join(__dirname + '/public')), function (req, res, next) {
