@@ -36,7 +36,9 @@ html {
   color: rgba(0, 128, 0, 0.664);
 }
 
-@media screen and (max-width: 320px) {
+
+
+@media screen and (max-width: 768px) {
   .fotosquemsomos {
     display: none;
   }
