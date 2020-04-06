@@ -3,3 +3,25 @@
 .rev-slidebg {
   filter: brightness(0.7) !important
 }
+
+.feature-box.feature-box-style-4 h4 {
+  color: #9dabb9;
+}
+
+p {
+  color: #777;
+  line-height: 26px;
+  margin: 0 0 2px;
+}
+
+.bx-servicos-produtos {
+  background: white;
+  padding: 11px;
+  border-radius: 4px;
+  box-shadow: 3px 4px 4px 2px rgba(0, 0, 0, 0.22);
+  height: 200px;
+}
+
+/* .bg-color-grey-scale-1 {
+  background-color: #edf2f7 !important;
+} */
