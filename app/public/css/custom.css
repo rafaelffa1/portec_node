@@ -21,10 +21,38 @@ p {
   box-shadow: 3px 4px 4px 2px rgba(0, 0, 0, 0.22);
   height: 200px;
 }
+
 html {
   scroll-behavior: smooth;
 }
 
-/* .bg-color-grey-scale-1 {
-  background-color: #edf2f7 !important;
-} */
+.telefone {
+  font-size: 21px;
+  color: rgba(37, 82, 164, 0.788235294117647);
+}
+
+.iconewhatsapp {
+  font-size: 28px !important;
+  color: rgba(0, 128, 0, 0.664);
+}
+
+@media screen and (max-width: 320px) {
+  .fotosquemsomos {
+    display: none;
+  }
+  .header-row {
+    margin-left: 14px;
+  }
+  .telefone {
+    font-size: 16px;
+  }
+  .iconewhatsapp {
+    font-size: 13px !important;
+  }
+  .tp-mask-wrap {
+    display: none;
+  }
+  .tp-parallax-wrap {
+    display: none !important;
+  }
+}
