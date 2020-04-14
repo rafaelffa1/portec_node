@@ -69,6 +69,7 @@ router.post("/panel/envioEmail", function (req, res) {
     if (error) {
       console.log(error);
     } else {
+      res.sendStatus(200);
       console.log('Email enviado: ' + info.response);
     }
   });
