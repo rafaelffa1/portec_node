@@ -46,7 +46,7 @@ router.get("/contato", function (req, res) {
   res.sendfile(path.join(__dirname + "/page/contact.html"));
 });
 
-router.get("/panel/envioEmail", function (req, res) {
+router.post("/panel/envioEmail", (req, res) => {
   const transporter = nodemailer.createTransport({
     host: "smtp.kinghost.net",
     port: 587,
