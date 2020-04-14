@@ -3,6 +3,8 @@ const path = require("path");
 const dbPath = path.resolve(__dirname, "../db/sample.db");
 const util = require('util')
 
+//  ssh portecportas@http://portecportas.com.br
+
 let db = new sqlite3.Database(dbPath);
 
 exports.insertProtdutos = function (
