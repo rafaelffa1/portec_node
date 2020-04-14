@@ -143,22 +143,28 @@ router.post("/envio_email", (req, res) => {
       user: "siteatendimento@portecportas.com.br",
       pass: "Portec2020"
     },
-    tls: {rejectUnauthorized: false}
+    tls: { rejectUnauthorized: false }
   });
 
   const mailOptions = {
     from: 'siteatendimento@portecportas.com.br',
     to: 'rafaelffa1@hotmail.com',
-    subject: 'E-mail enviado usando Node!',
-    text: 'Bem fácil, não? ;)'
+    subject: 'E-mail Fale Conosco Site Portec',
+    text: '',
+    html: `
+    <strong>Nome:</strong> ${req.body.name} <br />
+    <strong>Email:</strong> ${req.body.email} <br />
+    <strong>Assunto:</strong> ${req.body.subject} <br />
+    <strong>Mensagem:</strong> ${req.body.text}
+    `
   };
 
   transporter.sendMail(mailOptions, function (error, info) {
     console.log(error);
-    console.log(info);    
+    console.log(info);
     if (error) {
       console.log(error);
-      res.json({ result: error});
+      res.json({ result: error });
     } else {
       res.json({ result: true });
       console.log('Email enviado: ' + info.response);

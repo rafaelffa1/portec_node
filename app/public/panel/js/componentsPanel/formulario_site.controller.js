@@ -9,7 +9,8 @@ class FormularioSite extends React.Component {
       name: '',
       email: '',
       subject: '',
-      text: ''
+      text: '',
+      mensagemSucesso: false
     }
   }
 
@@ -39,28 +40,32 @@ class FormularioSite extends React.Component {
       data: { name, email, subject, text },
       success: (resp) => {
         if (resp.result === true) {
-          console.log('sucesso !!! enviado');
+          this.setState({
+            mensagemSucesso: true
+          })
+          setTimeout(function () {
+            this.setState({
+              mensagemSucesso: false
+            })
+          }, 3000);
         } else {
           console.log(resp.result);
-
         }
       }
     })
   }
 
   render() {
-    const { name, email, subject, text } = this.state;
+    const { name, email, subject, text, mensagemSucesso } = this.state;
     return (
       <form id="contactForm" className="contact-form">
 
-        <div className="contact-form-success alert alert-success d-none mt-4">
-          <strong>Success!</strong> Your message has been sent to us.
-				</div>
-
-        <div className="contact-form-error alert alert-danger d-none mt-4" id="contactError">
-          <strong>Error!</strong> There was an error sending your message.
-					<span className="mail-error-message text-1 d-block" id="mailErrorMessage"></span>
-        </div>
+        {
+          mensagemSucesso === true &&
+          <div className="contact-form-success alert alert-success">
+            <strong>Enviado com Sucesso!</strong> Em breve iremos responder sua mensagem.
+				  </div>
+        }
 
         <div className="form-row">
           <div className="form-group col-lg-6">
@@ -89,7 +94,7 @@ class FormularioSite extends React.Component {
         </div>
         <div className="form-row">
           <div className="form-group col">
-            <input type="submit" value="Enviar" onClick={(e) => this.enviarFormulario(e)} className="btn btn-primary btn-modern" />
+            <input type="submit" value="Enviar" disabled={mensagemSucesso} onClick={(e) => this.enviarFormulario(e)} className="btn btn-primary btn-modern" />
           </div>
         </div>
       </form>
