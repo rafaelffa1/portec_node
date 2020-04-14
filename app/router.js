@@ -47,32 +47,33 @@ router.get("/contato", function (req, res) {
 });
 
 router.post("/panel/envioEmail", (req, res) => {
-  const transporter = nodemailer.createTransport({
-    host: "smtp.kinghost.net",
-    port: 587,
-    secure: true, // true for 465, false for other ports
-    auth: {
-      user: "siteatendimento@portecportas.com.br",
-      pass: "Portec2020"
-    },
-    tls: { rejectUnauthorized: false }
-  });
+  res.sendfile(path.join(__dirname + "/page/contact.html"));
+  // const transporter = nodemailer.createTransport({
+  //   host: "smtp.kinghost.net",
+  //   port: 587,
+  //   secure: true, // true for 465, false for other ports
+  //   auth: {
+  //     user: "siteatendimento@portecportas.com.br",
+  //     pass: "Portec2020"
+  //   },
+  //   tls: { rejectUnauthorized: false }
+  // });
 
-  const mailOptions = {
-    from: 'siteatendimento@portecportas.com.br',
-    to: 'rafaelffa1@hotmail.com',
-    subject: 'E-mail enviado usando Node!',
-    text: 'Bem fácil, não? ;)'
-  };
+  // const mailOptions = {
+  //   from: 'siteatendimento@portecportas.com.br',
+  //   to: 'rafaelffa1@hotmail.com',
+  //   subject: 'E-mail enviado usando Node!',
+  //   text: 'Bem fácil, não? ;)'
+  // };
 
-  transporter.sendMail(mailOptions, function (error, info) {
-    if (error) {
-      console.log(error);
-    } else {
-      res.sendStatus(200);
-      console.log('Email enviado: ' + info.response);
-    }
-  });
+  // transporter.sendMail(mailOptions, function (error, info) {
+  //   if (error) {
+  //     console.log(error);
+  //   } else {
+  //     res.sendStatus(200);
+  //     console.log('Email enviado: ' + info.response);
+  //   }
+  // });
 });
 
 

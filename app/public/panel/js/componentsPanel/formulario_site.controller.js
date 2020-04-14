@@ -87,7 +87,7 @@ class FormularioSite extends React.Component {
         </div>
         <div className="form-row">
           <div className="form-group col">
-            <input type="submit" value="Enviar" onClick={(e) => this.enviarFormulario(e)} className="btn btn-primary btn-modern" data-loading-text="Loading..." />
+            <input type="submit" value="Enviar" onClick={(e) => this.enviarFormulario(e)} className="btn btn-primary btn-modern" />
           </div>
         </div>
       </form>
