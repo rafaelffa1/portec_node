@@ -34,9 +34,9 @@ class FormularioSite extends React.Component {
     const { name, email, subject, text } = this.state;
 
     $.ajax({
-      type: "POST",
+      type: "GET",
       url: `http://${window.location.host}/panel/envioEmail`,
-      data: { name, email, subject, text },
+      // data: { name, email, subject, text },
       success: (resp) => {
         if (resp.result === true) {
           console.log('sucesso !!! enviado');
