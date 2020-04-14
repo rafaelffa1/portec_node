@@ -148,7 +148,7 @@ router.post("/envio_email", (req, res) => {
 
   const mailOptions = {
     from: 'siteatendimento@portecportas.com.br',
-    to: 'rafaelffa1@hotmail.com',
+    to: 'portec.tec@gmail.com',
     subject: 'E-mail Fale Conosco Site Portec',
     text: '',
     html: `
