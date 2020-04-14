@@ -46,37 +46,6 @@ router.get("/contato", function (req, res) {
   res.sendfile(path.join(__dirname + "/page/contact.html"));
 });
 
-router.post("/envioEmail", (req, res) => {
-  res.sendfile(path.join(__dirname + "/page/contact.html"));
-  // const transporter = nodemailer.createTransport({
-  //   host: "smtp.kinghost.net",
-  //   port: 587,
-  //   secure: true, // true for 465, false for other ports
-  //   auth: {
-  //     user: "siteatendimento@portecportas.com.br",
-  //     pass: "Portec2020"
-  //   },
-  //   tls: { rejectUnauthorized: false }
-  // });
-
-  // const mailOptions = {
-  //   from: 'siteatendimento@portecportas.com.br',
-  //   to: 'rafaelffa1@hotmail.com',
-  //   subject: 'E-mail enviado usando Node!',
-  //   text: 'Bem fácil, não? ;)'
-  // };
-
-  // transporter.sendMail(mailOptions, function (error, info) {
-  //   if (error) {
-  //     console.log(error);
-  //   } else {
-  //     res.sendStatus(200);
-  //     console.log('Email enviado: ' + info.response);
-  //   }
-  // });
-});
-
-
 // ===================== Panel =============================================
 
 router.get("/panel", function (req, res) {
@@ -163,6 +132,36 @@ router.post("/verificar_login", (req, res) => {
     }
   }
   UsuarioController.selectAllUsuarios(callback);
+});
+
+router.post("/envio_email", (req, res) => {
+  res.sendfile(path.join(__dirname + "/page/contact.html"));
+  const transporter = nodemailer.createTransport({
+    host: "smtp.kinghost.net",
+    port: 587,
+    secure: true, // true for 465, false for other ports
+    auth: {
+      user: "siteatendimento@portecportas.com.br",
+      pass: "Portec2020"
+    },
+    tls: { rejectUnauthorized: false }
+  });
+
+  const mailOptions = {
+    from: 'siteatendimento@portecportas.com.br',
+    to: 'rafaelffa1@hotmail.com',
+    subject: 'E-mail enviado usando Node!',
+    text: 'Bem fácil, não? ;)'
+  };
+
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      res.sendStatus(200);
+      console.log('Email enviado: ' + info.response);
+    }
+  });
 });
 
 router.post("/produto/cadastrar", function (req, res) {
