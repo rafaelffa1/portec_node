@@ -31,15 +31,26 @@ class FormularioSite extends React.Component {
 
   enviarFormulario = (e) => {
     e.preventDefault();
-    const { name, email, subject, text } = this.state;
+    // const { name, email, subject, text } = this.state;
 
+    // $.ajax({
+    //   type: "POST",
+    //   url: `http://${window.location.host}/envio_email`,
+    //   data: { name, email, subject, text },
+    //   success: (resp) => {
+    //     if (resp.result === true) {
+    //       console.log('sucesso !!! enviado');
+    //       // window.location.href = `http://${window.location.host}/panel/cadastro_produtos?token=${token}`
+    //     }
+    //   }
+    // })
     $.ajax({
       type: "POST",
-      url: `http://${window.location.host}/envio_email`,
-      data: { name, email, subject, text },
+      url: `http://${window.location.host}/verificar_login2`,
+      data: { 'token': 'teste' },
       success: (resp) => {
+        console.log(resp.result)
         if (resp.result === true) {
-          console.log('sucesso !!! enviado');
           // window.location.href = `http://${window.location.host}/panel/cadastro_produtos?token=${token}`
         }
       }

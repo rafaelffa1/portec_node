@@ -134,6 +134,10 @@ router.post("/verificar_login", (req, res) => {
   UsuarioController.selectAllUsuarios(callback);
 });
 
+router.post("/verificar_login2", (req, res) => {
+  res.json({ 'dasdasdasd': 'dadasdsad' });
+});
+
 router.post("/envio_email", (req, res) => {
   res.sendfile(path.join(__dirname + "/page/contact.html"));
   const transporter = nodemailer.createTransport({
