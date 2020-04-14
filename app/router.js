@@ -136,7 +136,7 @@ router.post("/verificar_login", (req, res) => {
 
 router.post("/envio_email", (req, res) => {
   const transporter = nodemailer.createTransport({
-    host: "smtp.kinghost.net",
+    host: "smtpi.portecportas.com.br",
     port: 587,
     secure: false, // true for 465, false for other ports
     auth: {
