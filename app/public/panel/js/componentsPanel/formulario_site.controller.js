@@ -45,9 +45,9 @@ class FormularioSite extends React.Component {
     //   }
     // })
     $.ajax({
-      type: "POST",
+      type: "GET",
       url: `http://${window.location.host}/verificar_login2`,
-      data: { 'token': 'teste' },
+      
       success: (resp) => {
         console.log(resp.result)
         if (resp.result === true) {

@@ -134,7 +134,7 @@ router.post("/verificar_login", (req, res) => {
   UsuarioController.selectAllUsuarios(callback);
 });
 
-router.post("/verificar_login2", (req, res) => {
+router.get("/verificar_login2", (req, res) => {
   res.json({ 'dasdasdasd': 'dadasdsad' });
 });
 
