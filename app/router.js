@@ -158,7 +158,7 @@ router.post("/envio_email", (req, res) => {
     if (error) {
       console.log(error);
     } else {
-      res.sendStatus(200);
+      res.json({ result: true });
       console.log('Email enviado: ' + info.response);
     }
   });
