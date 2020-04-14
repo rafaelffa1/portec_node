@@ -138,12 +138,12 @@ router.post("/envio_email", (req, res) => {
   const transporter = nodemailer.createTransport({
     host: "smtp.kinghost.net",
     port: 587,
-    secure: true, // true for 465, false for other ports
+    secure: false, // true for 465, false for other ports
     auth: {
       user: "siteatendimento@portecportas.com.br",
       pass: "Portec2020"
     },
-    tls: { rejectUnauthorized: false }
+    // tls: { rejectUnauthorized: false }
   });
 
   const mailOptions = {
