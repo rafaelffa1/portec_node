@@ -143,7 +143,7 @@ router.post("/envio_email", (req, res) => {
       user: "siteatendimento@portecportas.com.br",
       pass: "Portec2020"
     },
-    // tls: { rejectUnauthorized: false }
+    tls: {rejectUnauthorized: false}
   });
 
   const mailOptions = {
