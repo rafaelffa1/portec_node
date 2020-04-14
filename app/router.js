@@ -135,7 +135,6 @@ router.post("/verificar_login", (req, res) => {
 });
 
 router.post("/envio_email", (req, res) => {
-  res.sendfile(path.join(__dirname + "/page/contact.html"));
   const transporter = nodemailer.createTransport({
     host: "smtp.kinghost.net",
     port: 587,
