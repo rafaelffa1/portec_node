@@ -156,6 +156,7 @@ router.post("/envio_email", (req, res) => {
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
       console.log(error);
+      res.json({ result: false});
     } else {
       res.json({ result: true });
       console.log('Email enviado: ' + info.response);
