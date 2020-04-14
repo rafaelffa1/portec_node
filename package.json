@@ -16,7 +16,7 @@
     "express-session": "^1.17.0",
     "fs": "0.0.1-security",
     "localStorage": "^1.0.4",
-    "mongoose": "~4.11.12",
+    "mongoose": "~5.7.5",
     "node-gyp": "^5.0.7",
     "nodemailer": "^6.4.6",
     "react-file-base64": "^1.0.3",
