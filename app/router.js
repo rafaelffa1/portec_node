@@ -6,6 +6,7 @@ const UsuarioController = require('./controller/UsuarioController');
 const bcrypt = require('bcryptjs');
 // const session = require('express-session');
 const app = express();
+const nodemailer = require('nodemailer');
 
 router.use('/', express.static(path.join(__dirname + '/public')), function (req, res, next) {
   next();
@@ -43,6 +44,34 @@ router.get("/portifolio-single", function (req, res) {
 
 router.get("/contato", function (req, res) {
   res.sendfile(path.join(__dirname + "/page/contact.html"));
+});
+
+router.post("/panel/envioEmail", function (req, res) {
+  const transporter = nodemailer.createTransport({
+    host: "smtp.kinghost.net",
+    port: 587,
+    secure: true, // true for 465, false for other ports
+    auth: {
+      user: "siteatendimento@portecportas.com.br",
+      pass: "Portec2020"
+    },
+    tls: { rejectUnauthorized: false }
+  });
+
+  const mailOptions = {
+    from: 'siteatendimento@portecportas.com.br',
+    to: 'rafaelffa1@hotmail.com',
+    subject: 'E-mail enviado usando Node!',
+    text: 'Bem fácil, não? ;)'
+  };
+
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log('Email enviado: ' + info.response);
+    }
+  });
 });
 
 

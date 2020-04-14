@@ -422,49 +422,7 @@
 							</p>
 						</div>
 
-						<form id="contactForm" class="contact-form" action="php/contact-form.php" method="POST">
-							<div class="contact-form-success alert alert-success d-none mt-4" id="contactSuccess">
-								<strong>Success!</strong> Your message has been sent to us.
-							</div>
-
-							<div class="contact-form-error alert alert-danger d-none mt-4" id="contactError">
-								<strong>Error!</strong> There was an error sending your message.
-								<span class="mail-error-message text-1 d-block" id="mailErrorMessage"></span>
-							</div>
-
-							<div class="form-row">
-								<div class="form-group col-lg-6">
-									<label class="required font-weight-bold text-dark text-2">Nome Completo</label>
-									<input type="text" value="" data-msg-required="Please enter your name." maxlength="100"
-										class="form-control" name="name" id="name" required>
-								</div>
-								<div class="form-group col-lg-6">
-									<label class="required font-weight-bold text-dark text-2">Email</label>
-									<input type="email" value="" data-msg-required="Please enter your email address."
-										data-msg-email="Please enter a valid email address." maxlength="100" class="form-control"
-										name="email" id="email" required>
-								</div>
-							</div>
-							<div class="form-row">
-								<div class="form-group col">
-									<label class="font-weight-bold text-dark text-2">Assunto</label>
-									<input type="text" value="" data-msg-required="Please enter the subject." maxlength="100"
-										class="form-control" name="subject" id="subject" required>
-								</div>
-							</div>
-							<div class="form-row">
-								<div class="form-group col">
-									<label class="required font-weight-bold text-dark text-2">Mensagem</label>
-									<textarea maxlength="5000" data-msg-required="Please enter your message." rows="8"
-										class="form-control" name="message" id="message" required></textarea>
-								</div>
-							</div>
-							<div class="form-row">
-								<div class="form-group col">
-									<input type="submit" value="Enviar" class="btn btn-primary btn-modern" data-loading-text="Loading...">
-								</div>
-							</div>
-						</form>
+						<div id="formulariosite"></div>
 
 					</div>
 					<div class="col-lg-6">
@@ -472,20 +430,20 @@
 						<div class="appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="800">
 							<h4 class="mt-2 mb-1">Endereço <strong>do Escritorio</strong></h4>
 							<ul class="list list-icons list-icons-style-2 mt-2">
-								<li><i class="fas fa-map-marker-alt top-6"></i> <strong class="text-dark">Endereço</strong> 1234 Street
-									Name, City Name, United States</li>
-								<li><i class="fas fa-phone top-6"></i> <strong class="text-dark">Telefone:</strong> (123) 456-789</li>
-								<li><i class="fas fa-envelope top-6"></i> <strong class="text-dark">Email:</strong> <a
-										href="mailto:mail@example.com">mail@example.com</a></li>
+								<li><i class="fas fa-map-marker-alt top-6"></i> <strong class="text-dark">Endereço:</strong>
+									Rua 16 Quadra 20 Lote 08 Loja 02 B. IPANEMA - Valparaiso de Goiás - GO
+								</li>
+								<li><i class="fas fa-phone top-6"></i> <strong class="text-dark">Telefone:</strong> (61) 3615-2438 </li>
+								<li><i class="fas fa-envelope top-6"></i> <strong class="text-dark">Email:</strong>
+									<a href="mailto:portec.tec@gmail.com">portec.tec@gmail.com</a></li>
 							</ul>
 						</div>
 
 						<div class="appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="950">
 							<h4 class="pt-5">Horario <strong>de Trabalho</strong></h4>
 							<ul class="list list-icons list-dark mt-2">
-								<li><i class="far fa-clock top-6"></i> Monday - Friday - 9am to 5pm</li>
-								<li><i class="far fa-clock top-6"></i> Saturday - 9am to 2pm</li>
-								<li><i class="far fa-clock top-6"></i> Sunday - Closed</li>
+								<li><i class="far fa-clock top-6"></i> Segunda - Sexta - 9:00 às 18:00</li>
+								<!-- <li><i class="far fa-clock top-6"></i> Saturday - 9am to 2pm</li> -->
 							</ul>
 						</div>
 
@@ -546,7 +504,7 @@
 
 		// Map Markers
 		var mapMarkers = [{
-			address: "New York, NY 10017",
+			address: "R. 16, 416 - Ipanema",
 			html: "<strong>New York Office</strong><br>New York, NY 10017",
 			icon: {
 				image: "img/pin.png",
@@ -557,8 +515,8 @@
 		}];
 
 		// Map Initial Location
-		var initLatitude = 40.75198;
-		var initLongitude = -73.96978;
+		var initLatitude = - 16.083110;
+		var initLongitude = - 47.990822;
 
 		// Map Extended Settings
 		var mapSettings = {
@@ -622,6 +580,15 @@
 			ga('send', 'pageview');
 		</script>
 		 -->
+
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+		integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+		</script>
+	<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+	<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+	<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+	<script type="text/babel" src="js/componentsPanel/formulario_site.controller.js"></script>
 </body>
 
 </html>
