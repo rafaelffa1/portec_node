@@ -155,6 +155,7 @@ router.post("/envio_email", (req, res) => {
     <strong>Nome:</strong> ${req.body.name} <br />
     <strong>Email:</strong> ${req.body.email} <br />
     <strong>Assunto:</strong> ${req.body.subject} <br />
+    <strong>Telefone:</strong> ${req.body.telefone} <br />
     <strong>Mensagem:</strong> ${req.body.text}
     `
   };

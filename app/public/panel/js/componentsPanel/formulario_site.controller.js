@@ -10,6 +10,7 @@ class FormularioSite extends React.Component {
       email: '',
       subject: '',
       text: '',
+      telefone: '',
       mensagemSucesso: false
     }
   }
@@ -22,6 +23,10 @@ class FormularioSite extends React.Component {
     this.setState({ email: email.target.value })
   }
 
+  onChangeTelefone = (telefone) => {
+    this.setState({ telefone: telefone.target.value })
+  }
+
   onChangeSubject = (subject) => {
     this.setState({ subject: subject.target.value })
   }
@@ -32,12 +37,12 @@ class FormularioSite extends React.Component {
 
   enviarFormulario = (e) => {
     e.preventDefault();
-    const { name, email, subject, text } = this.state;
+    const { name, email, subject, text, telefone } = this.state;
 
     $.ajax({
       type: "POST",
       url: `http://${window.location.host}/envio_email`,
-      data: { name, email, subject, text },
+      data: { name, email, subject, text, telefone },
       success: (resp) => {
         if (resp.result === true) {
           this.setState({
@@ -56,7 +61,7 @@ class FormularioSite extends React.Component {
   }
 
   render() {
-    const { name, email, subject, text, mensagemSucesso } = this.state;
+    const { name, email, subject, text, telefone, mensagemSucesso } = this.state;
     return (
       <form id="contactForm" className="contact-form">
 
@@ -68,20 +73,25 @@ class FormularioSite extends React.Component {
         }
 
         <div className="form-row">
-          <div className="form-group col-lg-6">
+          <div className="form-group col-lg-4">
             <label className="required font-weight-bold text-dark text-2">Nome Completo</label>
             <input onChange={(e) => this.onChangeName(e)} type="text" value={name} maxlength="100" className="form-control" />
           </div>
 
-          <div className="form-group col-lg-6">
+          <div className="form-group col-lg-4">
             <label className="required font-weight-bold text-dark text-2">Email</label>
             <input type="email" onChange={(e) => this.onChangeEmail(e)} value={email} className="form-control" name="email" />
+          </div>
+
+          <div className="form-group col-lg-4">
+            <label className="required font-weight-bold text-dark text-2">Telefone</label>
+            <input type="phone" onChange={(e) => this.onChangeTelefone(e)} value={telefone} className="form-control" name="phone" />
           </div>
 
         </div>
         <div className="form-row">
           <div className="form-group col">
-            <label className="font-weight-bold text-dark text-2">Assunto</label>
+            <label className="font-weight-bold text-dark text-2">Assunto*</label>
             <input type="text" onChange={(e) => this.onChangeSubject(e)} value={subject} className="form-control" name="subject" />
           </div>
         </div>
